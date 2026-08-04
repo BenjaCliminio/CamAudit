@@ -28,10 +28,3 @@ DEFAULT_CREDENTIALS = [
 ]
 
 
-def credentials_for_brand(brand: str):
-    """Devuelve primero las credenciales de la marca estimada y después
-    el resto, para probar las más probables primero."""
-    brand = (brand or "").lower()
-    specific = [c for c in DEFAULT_CREDENTIALS if c[2] == brand]
-    rest = [c for c in DEFAULT_CREDENTIALS if c[2] != brand]
-    return specific + rest
